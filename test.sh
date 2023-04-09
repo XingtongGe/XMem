@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python eval.py --output ../output/d17 --dataset D17

@@ -12,6 +12,7 @@ from PIL import Image
 from inference.data.test_datasets import LongTestDataset, DAVISTestDataset, YouTubeVOSTestDataset
 from inference.data.mask_mapper import MaskMapper
 from model.network import XMem
+from model.VideoCompressor import VideoCompressor
 from inference.inference_core import InferenceCore
 
 from progressbar import progressbar
@@ -166,8 +167,6 @@ for vid_reader in progressbar(meta_loader, max_value=len(meta_dataset), redirect
 
     for ti, data in enumerate(loader):
         with torch.cuda.amp.autocast(enabled=not args.benchmark):
-            # GOP为10 设置VC
-            
             rgb = data['rgb'].cuda()[0]
             msk = data.get('mask')
             info = data['info']

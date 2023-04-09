@@ -48,7 +48,7 @@ class VideoReader(Dataset):
             self.im_transform = transforms.Compose([
                 transforms.ToTensor(),
                 im_normalization,
-                transforms.Resize(size, interpolation=InterpolationMode.BILINEAR),
+                transforms.Resize(size, interpolation=InterpolationMode.BILINEAR, antialias=True),
             ])
         self.size = size
 

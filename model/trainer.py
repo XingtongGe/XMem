@@ -86,7 +86,7 @@ class XMemTrainer:
                 else:
                     # pick num_ref_frames random frames
                     # this is not very efficient but I think we would 
-                    # need broadcasting in gather which we don't have
+                    # need broadcasting in gather which we don't have 
                     indices = [
                         torch.cat([filler_one, torch.randperm(ti-1)[:self.num_ref_frames-1]+1])
                     for _ in range(b)]
