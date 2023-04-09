@@ -165,6 +165,8 @@ for vid_reader in progressbar(meta_loader, max_value=len(meta_dataset), redirect
     first_mask_loaded = False
 
     for ti, data in enumerate(loader):
+            # GOP为10 设置VC
+            
         with torch.cuda.amp.autocast(enabled=not args.benchmark):
             # GOP为10 设置VC
             
